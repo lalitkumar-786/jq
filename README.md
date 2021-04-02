@@ -117,7 +117,7 @@ $ cat quiz.json | jq '.quiz.sport.q1 | keys'
 ```
 
 
-### 5. To check if a key exist
+### 5. To check if a key exist before iterating
 
 ```
 ## "options" exist as the output is not NULL
@@ -138,7 +138,7 @@ $ cat quiz.json | jq '.quiz.sport.q1.options[] | select(.=="New York Bulls")'
 ```
 
 
-7. To iterate over the list
+### 7. To iterate over the list
 ```
 $ cat quiz.json | jq '.quiz.sport.q1.options[0]'
 
