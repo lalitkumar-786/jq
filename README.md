@@ -11,7 +11,7 @@ $ brew install jq
 $ yum install jq
 ```
 
-###1. To list all/beatify the JSON file
+### 1. To list all/beatify the JSON file
   
   ```
   $ cat quiz.json | jq '.'
@@ -63,7 +63,7 @@ $ yum install jq
 </details>
 
 
-###2. To list a particular attribute
+### 2. To list a particular attribute
 
   ```
   $ cat quiz.json | jq '.quiz.sport'
@@ -95,7 +95,7 @@ $ yum install jq
   ```
 
 
-###3. To get all keys
+### 3. To get all keys
 ```
 $ cat quiz.json | jq '. | keys'
 
@@ -105,7 +105,7 @@ $ cat quiz.json | jq '. | keys'
 ```
 
 
-###4. To get nested keys
+### 4. To get nested keys
 ```
 $ cat quiz.json | jq '.quiz.sport.q1 | keys'
 
@@ -117,7 +117,7 @@ $ cat quiz.json | jq '.quiz.sport.q1 | keys'
 ```
 
 
-###5. To check if a key exist
+### 5. To check if a key exist
 
 ```
 ## "options" exist as the output is not NULL
@@ -130,8 +130,7 @@ cat quiz.json | jq '.quiz.sport.q1 | keys[] | select(.=="optionsnot")'
 ```
 
 
-###
-6. To grep for a particular value
+### 6. To grep for a particular value
 ```
 $ cat quiz.json | jq '.quiz.sport.q1.options[] | select(.=="New York Bulls")'
 
