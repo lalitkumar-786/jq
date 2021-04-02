@@ -62,6 +62,7 @@ $ yum install jq
 ```
 </details>
 
+
 2. To list a particular attribute
 
   ```
@@ -93,6 +94,7 @@ $ yum install jq
 ]
   ```
 
+
 3. To get all keys
 ```
 $ cat quiz.json | jq '. | keys'
@@ -101,6 +103,7 @@ $ cat quiz.json | jq '. | keys'
   "quiz"
 ]
 ```
+
 
 4. To get nested keys
 ```
@@ -112,6 +115,8 @@ $ cat quiz.json | jq '.quiz.sport.q1 | keys'
   "question"
 ]
 ```
+
+
 5. To check if a key exist
 
 ```
@@ -124,13 +129,16 @@ $ cat quiz.json | jq '.quiz.sport.q1 | keys[] | select(.=="options")'
 cat quiz.json | jq '.quiz.sport.q1 | keys[] | select(.=="optionsnot")'
 ```
 
-5. To grep for a particular value
+
+6. To grep for a particular value
 ```
 $ cat quiz.json | jq '.quiz.sport.q1.options[] | select(.=="New York Bulls")'
 
 "New York Bulls"
 ```
-6. To iterate over the list
+
+
+7. To iterate over the list
 ```
 $ cat quiz.json | jq '.quiz.sport.q1.options[0]'
 
